@@ -1,0 +1,39 @@
+.hero{
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+.box-wrapper{
+    padding: 2rem;
+    color: cornsilk;
+    border-radius: 10px;
+    background-color: cadetblue;
+    min-height: 20vh;
+    width: 20rem;
+
+}
+.serach-box{
+    .input{
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+}
+.movie-list{
+    .movie{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 1rem 0.5rem;
+        cursor: pointer;
+        // border: 1px solid black; 
+        button {
+            border: 0;
+            padding: 0.25rem 0.5rem;
+            cursor: pointer;
+        }
+        
+    }
+}
