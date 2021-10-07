@@ -41,44 +41,22 @@ function deleteMovie(event){
     handleUI();
 }
 
-function createElement(type,attr = {}, ...children){
-    const element = document.createElement(type);
-    for(let key in attr){
-        if(key.startsWith('data-')){
-            element.setAttribute(key, attr[key]);
-        }else{
-            element[key] = attr[key];
-        }
-    }
-    children.forEach((child)=> {
-        if(typeof child === "object"){
-            element.append(child);
-        }
-        if(typeof child === "string"){
-            let node = document.createTextNode(child);
-            element.append(node);
-        }
-    });
-    return element;
-}
-
 function handleUI(){
-    root.innerHTML = "";
     inputSearch.value = "";
-    movieList.forEach((movie,index)=> {
-        let li = createElement(
+    let movies = movieList.map((movie,index)=> {
+        let li = React.createElement(
             "li",
             {
                 className : "movie",
                 'data-id' : index
 
             },
-            createElement(
+            React.createElement(
                 "span",
                 {},
                 movie.name
             ),
-            createElement(
+            React.createElement(
                 'button',
                 {
                     'data-btn-id' : index,
@@ -87,7 +65,7 @@ function handleUI(){
                 },
                 movie.isWatched? "Watched" : "To Watch"
             ),
-            createElement(
+            React.createElement(
                 'span',
                 {
                     'data-cross-id': index
@@ -95,10 +73,12 @@ function handleUI(){
                 "❌"
             ),
         )
-        li.addEventListener("click", handleClick);
-        root.append(li);
+        // root.append(li);
+        return li;
     })
+    ReactDOM.render(movies, root);
 };
 
+root.addEventListener("click", handleClick);
 inputSearch.addEventListener('change', addMovies);
 handleUI();
