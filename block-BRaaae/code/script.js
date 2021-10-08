@@ -44,37 +44,50 @@ function deleteMovie(event){
 function handleUI(){
     inputSearch.value = "";
     let movies = movieList.map((movie,index)=> {
-        let li = React.createElement(
-            "li",
-            {
-                className : "movie",
-                'data-id' : index
-
-            },
-            React.createElement(
-                "span",
-                {},
-                movie.name
-            ),
-            React.createElement(
-                'button',
-                {
-                    'data-btn-id' : index,
-                    className : (movie.isWatched)? "watched":"to-watch",
-                    
-                },
-                movie.isWatched? "Watched" : "To Watch"
-            ),
-            React.createElement(
-                'span',
-                {
-                    'data-cross-id': index
-                },
-                "❌"
-            ),
+        return (
+            <li className= "movie" data-id={index}>
+                <span>
+                    {movie.name}
+                </span>
+                <button className= {movie.isWatched? "watched":"to-watch"} data-btn-id={index}>
+                    {movie.isWatched? "Watched":"To Watch"}
+                </button>
+                <span data-cross-id = {index}>
+                    {"❌"}
+                </span>
+            </li>
         )
+        // let li = React.createElement(
+        //     "li",
+        //     {
+        //         className : "movie",
+        //         'data-id' : index
+
+        //     },
+        //     React.createElement(
+        //         "span",
+        //         {},
+        //         movie.name
+        //     ),
+        //     React.createElement(
+        //         'button',
+        //         {
+        //             'data-btn-id' : index,
+        //             className : (movie.isWatched)? "watched":"to-watch",
+                    
+        //         },
+        //         movie.isWatched? "Watched" : "To Watch"
+        //     ),
+        //     React.createElement(
+        //         'span',
+        //         {
+        //             'data-cross-id': index
+        //         },
+        //         "❌"
+        //     ),
+        // )
         // root.append(li);
-        return li;
+        // return li;
     })
     ReactDOM.render(movies, root);
 };
