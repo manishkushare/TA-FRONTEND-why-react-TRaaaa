@@ -1,0 +1,30 @@
+.hero{
+    
+    #root{
+        background-color: honeydew;
+        // margin: 0 2rem;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: flex-start;
+        h1{
+            font-size: 2.5rem;
+            font-weight: 800    ;
+        }
+        h2{
+            font-size: 2rem;
+            color: orangered;
+        }
+        p{
+            font-size: 1.5rem;
+            color: gainsboro;
+        }
+    }
+}
+.flex-row{
+    display: flex;
+    &:nth-child(1){
+        margin-left: 1rem;
+    }
+}
