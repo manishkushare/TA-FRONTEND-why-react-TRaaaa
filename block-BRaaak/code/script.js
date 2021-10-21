@@ -38,57 +38,63 @@ let articles = [
 
 let root = document.querySelector(".root");
 
+
 function Card(props) {
-    console.log(props);
-    return (
+    console.log(props, "props");
+    return(
         <>
     
-        <article className="card" data-card-id={props.key} >
-            <div className="image-wrapper">
-                <img src={props.imageURL}/>
-                <span className="date-wrapper">
-                    {props.date}
-                </span>
-                <span className="category">
-                    {props.category}
-                </span>
-            </div>
-            <div calassName = "info">
-                <h1>
-                    {props.title}
-                </h1>
-                <h2>
-                    {props.subTitle}
-                </h2>
-                <p>
-                    {props.description}
-                </p>
-                <ul className="lists">
-                    <li>
-                        {"o 6 mins ago"}
-                    </li>
-                    <li>
-                        {`${props.comments} Comments`}
-                    </li>
-                </ul>
-            </div>
-        </article>
-    </>
+            <article className="card" data-card-id={props.key} >
+                <div className="image-wrapper">
+                    <img src={props.article.imageURL}/>
+                    <span className="date-wrapper">
+                        {props.article.date.getDate()}
+                    </span>
+                    <span className="category">
+                        {props.article.category}
+                    </span>
+                </div>
+                <div className = "info">
+                    <h1>
+                        {props.article.title}
+                    </h1>
+                    <h2>
+                        {props.article.subTitle}
+                    </h2>
+                    <p>
+                        {props.article.description}
+                    </p>
+                    <ul className="lists">
+                        <li>
+                            {"o 6 mins ago"}
+                        </li>
+                        <li>
+                            {`${props.article.comments} Comments`}
+                        </li>
+                    </ul>
+                </div>
+            </article>
+        </>
     )
+    
+
     
 }
 
-let cardsInfo= 
-    (
-        <>
+let cardsInfo = (
+    <>
         {
-             articles.map((article,index) => {
-                return <Card  key ={index} {...article}/>
-              })
+            articles.map((article,index)=> {
+                return <Card 
+                    key={index}
+                    article={article}
+                />
+            })
         }
-    
+        
     </>
-    )
+)
+    
 
  
     
