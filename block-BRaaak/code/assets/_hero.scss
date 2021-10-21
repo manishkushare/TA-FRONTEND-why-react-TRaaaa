@@ -1,0 +1,14 @@
+.root{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    overflow-x: auto;
+    grid-gap: 2rem;
+    justify-content: center;
+    align-content: center;
+}
+
+.image-wrapper{
+    img{
+        width: 100%;
+    }
+}
