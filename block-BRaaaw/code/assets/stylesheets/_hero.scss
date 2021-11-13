@@ -1,0 +1,50 @@
+.hero{
+  background-color: rgb(240, 213, 62);
+  min-height: 100vh;
+  position: relative;
+  
+}
+.root{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  
+}
+
+.card{
+  // position: absolute;
+  // z-index: 1;
+  width: 400px;
+  background-color: white;
+  display: flex;
+
+}
+
+.image-wrapper{
+  width: 50%;
+  // flex-basis: content;
+  img{
+    width: 100%;
+    vertical-align:bottom;
+  }
+}
+.info{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.active {
+  background-color: #A7F3D0;
+}
+.inactive{
+  background-color: #FECACA;
+}

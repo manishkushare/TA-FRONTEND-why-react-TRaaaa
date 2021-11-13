@@ -1,4 +1,4 @@
-[
+export let data = [
   {
     "_id": "60045f93884be473fdbf0b4d",
     "isActive": true,
