@@ -1,14 +1,15 @@
 import Button from "./Button";
-
+import {size,type} from '../buttonInfo';
+console.log(size,"hey",type);
 function App(){
   return (
     <div className="btn--container">
-      <Button label="Click Me!" size="small" type="primary"/>
-      <Button label="Click Me!" size="medium" type="primary"/>
-      <Button label="Click Me!" size="large" type="primary"/>
-      <Button label="Click Me!" size="small" type="secondary"/>
-      <Button label="Click Me!" size="large" type="tertiary"/>
-      <Button label="Click Me!" disabled/>
+      <Button label="Click Me!" size={size.SMALL}type={type.PRIMARY} onClickhandler= {()=> alert("Hey, you clicked me")}/>
+      <Button label="Click Me!" size={size.MEDIUM} type={type.PRIMARY}/>
+      <Button label="Click Me!" size={size.LARGE}type={type.PRIMARY}/>
+      <Button label="Click Me!" size={size.MEDIUM}type={type.SECONDARY}/>
+      <Button label="Click Me!" size={size.SMALL}type={type.TERTIARY} onClickhandler= {()=> alert("Hey, you clicked me")} />
+      <Button label="Click Me!" disabled onClickhandler= {()=> alert("Hey, you clicked me")}/>
 
 
 
