@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.btn--container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.button--small {
+  padding: 0.5rem 1rem;
+  font-size: 0.5rem;
+}
+
+.button--medium {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+.button--large {
+  padding: 1.5rem 3rem;
+  font-size: 2rem;
+}
+
+.button--primary {
+  border: 2px solid black;
+}
+
+.button--secondary {
+  border: 2px solid blue;
+}
+
+.button--tertiary {
+  background-color: blue;
+  color: wheat;
+  font-size: 1rem;
+}
+/*# sourceMappingURL=index.css.map */
